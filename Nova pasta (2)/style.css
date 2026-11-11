@@ -1,0 +1,32 @@
+header{
+    background-color: #222;
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    background-color: #444;
+    padding: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+}
+
+#container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+}
