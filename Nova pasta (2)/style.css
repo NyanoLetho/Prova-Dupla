@@ -112,3 +112,41 @@ a:hover {
     height: auto;
     margin-bottom: 10px;
 }
+
+#guilherme-formulario-inscricao {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1c1c1c;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 10px;
+    border: 1px solid rgb(155, 255, 200);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#guilherme-formulario-inscricao h2 {
+    color: rgb(155, 255, 200);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#guilherme-formulario-inscricao fieldset {
+    border: 1px solid rgba(155, 255, 200, 0.4);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#guilherme-formulario-inscricao legend {
+    color: rgb(155, 255, 200);
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+#guilherme-formulario-inscricao label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    color: white;
+}
