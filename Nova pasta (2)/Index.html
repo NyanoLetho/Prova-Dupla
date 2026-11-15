@@ -19,16 +19,16 @@
 
             <nav class="navegacao">
                 <ul>
-                    <li><a href="#secao-1">Início</a></li>
+                    <a href="#hyan_topo">Início</a>
                     <li><a href="#lancamentos">Lançamentos</a></li>
                     <li><a href="#mais-vendidos">Mais Vendidos</a></li>
-                    <li><a href="#plataforma">Plataforma</a></li>
+                    <li><a href="#encontrar">Encontrar</a></li>
                     <li><a href="#metroidvania">Metroidvania</a></li>
                     <li><a href="#roguelike">Roguelike</a></li>
                     <li><a href="#puzzle">Puzzle</a></li>
                     <li><a href="#rpgs">RPGs</a></li>
                     <li><a href="#estrategia">Estratégia</a></li>
-                    <li><a href="#relaxantes">Relaxantes</a></li>
+                    <li><a href="#perguntas">Perguntas</a></li>
                 </ul>
             </nav>
             
@@ -36,6 +36,10 @@
                 <a href="#inscricao" id="hyan-inscricao">Inscrever-se</a>
             </div>
         </header>
+
+        <div class="banner">
+            <img src="img/indieanobanner.png" alt="Banner Indieano">
+        </div>
 
         <main>
 
@@ -76,12 +80,35 @@
                 <a href="#hyan_topo">Voltar ao topo</a>
             </section>
 
-            <section id="plataforma" class="secao">
-                <article>
-                    <h2>Plataforma</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
+            <section id="encontrar" class="secao">
+
+                <h2>Galeria de Jogos</h2>
+
+                <div class="carrossel">
+                    <img id="imagem-carrossel" src="img/banterraria.jfif" alt="Terraria">
+
+                    <p id="legenda-carrossel">Terraria é um jogo sandbox 2D de exploração, mineração e combate. Você constrói, luta contra chefes e desbloqueia novos biomas e itens. Tem 4 estilos de combate e mais de 5.000 itens para descobrir.Joga solo ou online, disponível em PC, console e celular.</p>
+
+                    <div class="controles-carrossel">
+                        <button type="button" id="anterior">Anterior</button>
+                        <span id="contador-carrossel">1/4</span>
+                        <button type="button" id="proximo">Próximo</button>
+                    </div>
+                </div>
+
+                <div class="adicionar-imagem">
+                    <h3>Adicionar imagem</h3>
+
+                    <label for="arquivo-imagem">Escolha uma imagem:</label>
+                    <input type="file" id="arquivo-imagem" accept="image/*">
+
+                    <label for="legenda-nova">Legenda:</label>
+                    <input type="text" id="legenda-nova" placeholder="Digite uma legenda">
+
+                    <button type="button" id="adicionar-imagem">Adicionar</button>
+                </div>
+
+                <a href="#hyan_topo">Voltar ao topo</a>
             </section>
 
             <section id="metroidvania" class="secao">
@@ -124,13 +151,115 @@
                 </article>
             </section>
 
-            <section id="relaxantes" class="secao">
-                <article>
-                    <h2>Relaxantes</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
+
+            <section id="perguntas" class="secao">
+                <h2>Perguntas Frequentes</h2>
+
+                <input type="text" id="busca-perguntas" placeholder="Pesquisar pergunta...">
+
+                <div class="categoria-perguntas">
+                    <h3>Sobre o site</h3>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            Qual é o objetivo do Indieano? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>O Indieano tem como objetivo apresentar jogos independentes, seus lançamentos e diferentes categorias.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            O que são jogos indie? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>São jogos desenvolvidos por estúdios independentes ou pequenas equipes de desenvolvimento.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            O site é gratuito? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>Sim! Você pode navegar pelo site e conhecer as categorias gratuitamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            Como posso me inscrever? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>Clique no botão Inscrever-se no cabeçalho e preencha o formulário.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            Posso enviar sugestões? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>Sim! Você pode utilizar o campo Algo mais do formulário para enviar sugestões.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="categoria-perguntas">
+                    <h3>Jogos e categorias</h3>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            Onde encontro os lançamentos? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>Na seção Lançamentos, disponível no menu de navegação.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            O que é Metroidvania? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>É um gênero de jogos focado na exploração de mapas interconectados e na descoberta de novas habilidades.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            O que é Roguelike? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>É um gênero conhecido por partidas com desafios variados e elementos de aleatoriedade.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            O que são jogos Puzzle? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>São jogos que envolvem raciocínio, lógica e resolução de desafios.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-pergunta">
+                        <button class="botao-pergunta">
+                            Quais gêneros estão disponíveis? <span>+</span>
+                        </button>
+                        <div class="resposta-pergunta">
+                            <p>Plataforma, Metroidvania, Roguelike, Puzzle, RPGs, Estratégia e Relaxantes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="mensagem-perguntas">Nenhuma pergunta encontrada.</p>
+
+                <a href="#hyan_topo">Voltar ao topo</a>
             </section>
+
 
             <aside id="guilherme-tabela">
                 <h2>Tabela 10x6</h2>
@@ -229,6 +358,7 @@
                     </label>
                 </fieldset>
             </form>
+        </div>
         <footer>
             <p>Desenvolvido pelos grandiosos GOATs Guilherme e Hyano.</p>
         </footer>
