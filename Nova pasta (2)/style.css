@@ -32,6 +32,17 @@ html {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 #logo img {
     height: 60px;
     width: 200px;
@@ -41,8 +52,9 @@ html {
 nav.navegacao ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 a {
@@ -113,40 +125,127 @@ a:hover {
     margin-bottom: 10px;
 }
 
-#guilherme-formulario-inscricao {
+
+#busca-perguntas {
     width: 100%;
-    max-width: 800px;
-    background-color: #1c1c1c;
-    padding: 30px;
-    margin: 40px auto;
-    border-radius: 10px;
-    border: 1px solid rgb(155, 255, 200);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#guilherme-formulario-inscricao h2 {
+.categoria-perguntas {
+    margin-bottom: 25px;
+}
+
+.categoria-perguntas h3 {
     color: rgb(155, 255, 200);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+}
+
+.item-pergunta {
+    margin-bottom: 8px;
+}
+
+.botao-pergunta {
+    width: 100%;
+    padding: 15px;
+    background-color: #292929;
+    color: white;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao-pergunta:hover {
+    background-color: #383838;
+}
+
+.resposta-pergunta {
+    display: none;
+    padding: 15px;
+    background-color: #eee;
+    color: #222;
+}
+
+.item-pergunta.ativo .resposta-pergunta {
+    display: block;
+}
+
+.botao-pergunta span {
+    color: rgb(155, 255, 200);
+    font-size: 18px;
+}
+
+#mensagem-perguntas {
+    display: none;
+    padding: 15px;
     text-align: center;
 }
 
-#guilherme-formulario-inscricao fieldset {
-    border: 1px solid rgba(155, 255, 200, 0.4);
-    border-radius: 8px;
+
+.carrossel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
     padding: 20px;
-    margin-bottom: 20px;
+    background-color: #292929;
+    border-radius: 10px;
 }
 
-#guilherme-formulario-inscricao legend {
+#imagem-carrossel {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#legenda-carrossel {
+    text-align: center;
+}
+
+.controles-carrossel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.controles-carrossel button,
+.adicionar-imagem button {
+    padding: 10px 20px;
+    background-color: rgb(155, 255, 200);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controles-carrossel button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.adicionar-imagem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #292929;
+    border-radius: 10px;
+}
+
+.adicionar-imagem input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#contador-carrossel {
     color: rgb(155, 255, 200);
     font-weight: bold;
-    padding: 0 10px;
-}
-
-#guilherme-formulario-inscricao label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 0.95rem;
-    color: white;
 }
