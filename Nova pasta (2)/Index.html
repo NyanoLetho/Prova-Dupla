@@ -1,370 +1,566 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyan Castro Nascimento - Guilherme Chagas</title>
+    <meta name="description" content="Indieano Store: loja de jogos independentes com chave digital, catálogo, carrinho e finalização de pedido.">
+    <title>Indieano Store | Hyan Castro Nascimento e Guilherme Chagas</title>
+
+    <style>
+        h1 { letter-spacing: 1px; }
+        h2 { line-height: 1.2; }
+        fieldset { margin-bottom: 1rem; }
+        legend { font-weight: bold; }
+        footer p { text-align: center; }
+    </style>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="container">
 
-        <header id="hyan_topo">
-            <div id="logo">
-                <img src="img/indieanologo.png" alt="Logo do site">
-            </div>
+        <div id="hyan_topo"></div>
 
-            <nav class="navegacao">
+        <header class="hyan_topo">
+            <a class="hyan_logo" href="#inicio">
+                <img src="img/indieanologo.png" alt="Logotipo Indieano" onerror="this.remove()">
+            </a>
+
+            <nav class="hyan_menu">
                 <ul>
-                    <a href="#hyan_topo">Início</a>
-                    <li><a href="#lancamentos">Lançamentos</a></li>
-                    <li><a href="#mais-vendidos">Mais Vendidos</a></li>
-                    <li><a href="#encontrar">Encontrar</a></li>
-                    <li><a href="#metroidvania">Metroidvania</a></li>
-                    <li><a href="#roguelike">Roguelike</a></li>
-                    <li><a href="#puzzle">Puzzle</a></li>
-                    <li><a href="#rpgs">RPGs</a></li>
-                    <li><a href="#estrategia">Estratégia</a></li>
-                    <li><a href="#perguntas">Perguntas</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#lancamentos">Novidades</a></li>
+                    <li><a href="#loja">Loja</a></li>
+                    <li><a href="#ofertas">Ofertas</a></li>
+                    <li><a href="#categorias">Categorias</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#como-comprar">Como comprar</a></li>
+                    <li><a href="#perguntas">FAQ</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
                 </ul>
             </nav>
-            
-            <div id="guilherme-inscricao">
-                <a href="#inscricao" id="hyan-inscricao">Inscrever-se</a>
-            </div>
+
+            <button type="button" id="hyan-abrir-carrinho" class="hyan_botao hyan_botao_destaque">
+                Carrinho (<span id="hyan-contador">0</span>)
+            </button>
         </header>
 
-        <div class="banner">
-            <img src="img/indieanobanner.png" alt="Banner Indieano">
+        <div class="hyan_banner">
+            <img src="img/banner-indieano.jpg" alt="Destaques de jogos independentes"
+                 onerror="this.onerror=null; this.src='img/treeshateyou.jpg'">
+            <div class="hyan_banner_texto">
+                <p class="hyan_etiqueta">Chaves digitais de jogos indie</p>
+                <h1>Grandes ideias, pequenos preços.</h1>
+                <p class="hyan_banner_descricao">Escolha seu próximo jogo independente, monte o carrinho e receba a chave por e-mail.</p>
+                <a class="hyan_botao hyan_botao_destaque" href="#loja">Ver jogos à venda</a>
+            </div>
         </div>
 
         <main>
-
-            <section id="lancamentos" class="secao">
-                <article>
-                    <h2>Lançamentos</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
+            <section id="inicio" class="hyan_secao guilherme_destaque">
+                <div class="guilherme_texto">
+                    <h2>O cenário independente em uma só loja</h2>
+                    <p>
+                        Jogos independentes provam que criatividade não depende do tamanho de um
+                        estúdio. Na Indieano Store você encontra exploração, estratégia, narrativa
+                        e ação, com preços claros e entrega digital.
+                    </p>
+                    <a class="hyan_botao" href="#lancamentos">Ver novidades</a>
+                </div>
+                <figure class="guilherme_imagem">
+                    <img src="img/hollowknight.jpg" alt="Arte de Hollow Knight">
+                    <figcaption>Hollow Knight: um dos destaques da loja.</figcaption>
+                </figure>
+                <aside class="guilherme_lateral">
+                    <h3>Por que comprar aqui?</h3>
+                    <ul>
+                        <li>Entrega digital por e-mail</li>
+                        <li>Cupom de 10% na primeira compra</li>
+                        <li>Pagamento por Pix, cartão ou boleto</li>
+                        <li>Catálogo com jogos de vários gêneros</li>
+                    </ul>
+                    <p class="guilherme_nota">Projeto acadêmico: a loja é demonstrativa e não realiza vendas reais.</p>
+                </aside>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
             </section>
 
-            <section id="mais-vendidos" class="secao">
-                <h2>Mais Vendidos</h2>
+            <section id="lancamentos" class="hyan_secao">
+                <div class="hyan_cabecalho_secao">
+                    <h2>Novidades na vitrine</h2>
+                    <p>Navegue pelos jogos que acabaram de entrar no catálogo.</p>
+                </div>
+                <div class="hyan_carrossel">
+                    <img id="hyan-imagem-carrossel" src="img/terraria.jpg" alt="Arte do jogo Terraria">
+                    <p id="hyan-legenda-carrossel"></p>
+                    <div class="hyan_controles">
+                        <button type="button" id="hyan-anterior" class="hyan_botao">Anterior</button>
+                        <span id="hyan-contador-carrossel">1/4</span>
+                        <button type="button" id="hyan-proximo" class="hyan_botao">Próximo</button>
+                    </div>
+                </div>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
+            </section>
 
-                <div class="grid-jogos">
-
-                    <article class="jogos">
-                        <img src="img/terraria.jpg" alt="Terraria">
-                        <h3>Terraria</h3>
+            <section id="loja" class="hyan_secao">
+                <div class="hyan_cabecalho_secao">
+                    <h2>Jogos à venda</h2>
+                    <p>Oito sucessos independentes. Clique em adicionar para colocar no carrinho.</p>
+                </div>
+                <div class="hyan_grid_produtos">
+                    <article class="hyan_card">
+                        <img src="img/terraria.jpg" alt="Arte do jogo Terraria" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Terraria</h3>
+                            <p>Exploração, construção, mineração e combate em um mundo 2D cheio de possibilidades.</p>
+                            <span class="hyan_tag">Sandbox / Aventura</span>
+                            <p class="hyan_preco">R$ 19,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="terraria" data-nome="Terraria" data-preco="19.99">Adicionar ao carrinho</button>
+                        </div>
                     </article>
-
-                    <article class="jogos">
-                        <img src="img/stardewvalley.jpg" alt="Stardew Valley">
-                        <h3>Stardew Valley</h3>
+                    <article class="hyan_card">
+                        <img src="img/stardewvalley.jpg" alt="Arte do jogo Stardew Valley" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Stardew Valley</h3>
+                            <p>Cuide de uma fazenda, conheça os moradores e construa sua rotina no campo.</p>
+                            <span class="hyan_tag">Simulação / RPG</span>
+                            <p class="hyan_preco">R$ 24,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="stardew" data-nome="Stardew Valley" data-preco="24.99">Adicionar ao carrinho</button>
+                        </div>
                     </article>
-
-                    <article class="jogos">
-                        <img src="img/hollowknight.jpg" alt="Hollow Knight">
-                        <h3>Hollow Knight</h3>
+                    <article class="hyan_card">
+                        <img src="img/hollowknight.jpg" alt="Arte do jogo Hollow Knight" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Hollow Knight</h3>
+                            <p>Explore um reino subterrâneo interconectado, repleto de mistérios e desafios.</p>
+                            <span class="hyan_tag">Metroidvania</span>
+                            <p class="hyan_preco">R$ 46,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="hollow" data-nome="Hollow Knight" data-preco="46.99">Adicionar ao carrinho</button>
+                        </div>
                     </article>
-
-                    <article class="jogos">
-                        <img src="img/cuphead.jpg" alt="Cuphead">
-                        <h3>Cuphead</h3>
+                    <article class="hyan_card">
+                        <img src="img/cuphead.jpg" alt="Arte do jogo Cuphead" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Cuphead</h3>
+                            <p>Enfrente chefes em uma aventura de ação inspirada na animação clássica.</p>
+                            <span class="hyan_tag">Ação / Plataforma</span>
+                            <p class="hyan_preco">R$ 36,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="cuphead" data-nome="Cuphead" data-preco="36.99">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+                    <article class="hyan_card">
+                        <img src="img/celeste.jpg" alt="Arte do jogo Celeste" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Celeste</h3>
+                            <p>Suba por montanhas desafiadoras em uma jornada emocionante com personagens cativantes.</p>
+                            <span class="hyan_tag">Plataforma</span>
+                            <p class="hyan_preco">R$ 29,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="celeste" data-nome="Celeste" data-preco="29.99">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+                    <article class="hyan_card">
+                        <img src="img/deadcells.jpg" alt="Arte do jogo Dead Cells" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Dead Cells</h3>
+                            <p>Um roguelite de ação com combates fluidos e mapas que mudam a cada tentativa.</p>
+                            <span class="hyan_tag">Roguelite / Ação</span>
+                            <p class="hyan_preco">R$ 49,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="deadcells" data-nome="Dead Cells" data-preco="49.99">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+                    <article class="hyan_card">
+                        <img src="img/undertale.jpg" alt="Arte do jogo Undertale" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Undertale</h3>
+                            <p>Um jogo de RPG com um enredo único e personagens cativantes.</p>
+                            <span class="hyan_tag">RPG</span>
+                            <p class="hyan_preco">R$ 19,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="undertale" data-nome="Undertale" data-preco="19.99">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+                    <article class="hyan_card">
+                        <img src="img/hades.jpg" alt="Arte do jogo Hades" loading="lazy">
+                        <div class="hyan_card_corpo">
+                            <h3>Hades</h3>
+                            <p>Um roguelike de ação com narrativa envolvente e combate dinâmico.</p>
+                            <span class="hyan_tag">Roguelike / Ação</span>
+                            <p class="hyan_preco">R$ 46,99</p>
+                            <button type="button" class="hyan_botao hyan_botao_destaque" data-produto data-id="hades" data-nome="Hades" data-preco="46.99">Adicionar ao carrinho</button>
+                        </div>
                     </article>
                 </div>
-
-                <a href="#hyan_topo">Voltar ao topo</a>
+                <p id="hyan-aviso" class="hyan_aviso"></p>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
             </section>
 
-            <section id="encontrar" class="secao">
-
-                <h2>Galeria de Jogos</h2>
-
-                <div class="carrossel">
-                    <img id="imagem-carrossel" src="img/banterraria.jfif" alt="Terraria">
-
-                    <p id="legenda-carrossel">Terraria é um jogo sandbox 2D de exploração, mineração e combate. Você constrói, luta contra chefes e desbloqueia novos biomas e itens. Tem 4 estilos de combate e mais de 5.000 itens para descobrir.Joga solo ou online, disponível em PC, console e celular.</p>
-
-                    <div class="controles-carrossel">
-                        <button type="button" id="anterior">Anterior</button>
-                        <span id="contador-carrossel">1/4</span>
-                        <button type="button" id="proximo">Próximo</button>
-                    </div>
+            <section id="ofertas" class="hyan_secao">
+                <div class="hyan_cabecalho_secao">
+                    <h2>Combos e cupom</h2>
+                    <p>Leve dois jogos de uma vez e use o cupom ao finalizar o pedido.</p>
                 </div>
-
-                <div class="adicionar-imagem">
-                    <h3>Adicionar imagem</h3>
-
-                    <label for="arquivo-imagem">Escolha uma imagem:</label>
-                    <input type="file" id="arquivo-imagem" accept="image/*">
-
-                    <label for="legenda-nova">Legenda:</label>
-                    <input type="text" id="legenda-nova" placeholder="Digite uma legenda">
-
-                    <button type="button" id="adicionar-imagem">Adicionar</button>
+                <div class="hyan_combos">
+                    <article class="hyan_combo">
+                        <h3>Combo Exploração</h3>
+                        <p>Terraria e Hollow Knight: dois mundos enormes para explorar com calma.</p>
+                        <p class="hyan_preco">R$ 66,98</p>
+                        <button type="button" class="hyan_botao hyan_botao_destaque" data-combo="terraria,hollow">Adicionar combo</button>
+                    </article>
+                    <article class="hyan_combo">
+                        <h3>Combo Aconchego e Ação</h3>
+                        <p>Stardew Valley e Cuphead: fazenda tranquila de dia, chefes difíceis à noite.</p>
+                        <p class="hyan_preco">R$ 61,98</p>
+                        <button type="button" class="hyan_botao hyan_botao_destaque" data-combo="stardew,cuphead">Adicionar combo</button>
+                    </article>
+                    <aside class="hyan_cupom">
+                        <h3>Cupom INDIE10</h3>
+                        <p>10% de desconto no total do pedido. Digite o código no campo de cupom, na etapa de pagamento do carrinho.</p>
+                        <button type="button" class="hyan_botao" data-abrir-modal>Abrir carrinho</button>
+                    </aside>
                 </div>
-
-                <a href="#hyan_topo">Voltar ao topo</a>
+                <p id="hyan-aviso-ofertas" class="hyan_aviso"></p>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
             </section>
 
-            <section id="metroidvania" class="secao">
-                <article>
-                    <h2>Metroidvania</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
-            </section>
-
-            <section id="roguelike" class="secao">
-                <article>
-                    <h2>Roguelike</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
-            </section>
-
-            <section id="puzzle" class="secao">
-                <article>
-                    <h2>Puzzle</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
-            </section>
-
-            <section id="rpgs" class="secao">
-                <article>
-                    <h2>RPGs</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
-            </section>
-
-            <section id="estrategia" class="secao">
-                <article>
-                    <h2>Estratégia</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#hyan_topo">Voltar ao topo</a>
-                </article>
-            </section>
-
-
-            <section id="perguntas" class="secao">
-                <h2>Perguntas Frequentes</h2>
-
-                <input type="text" id="busca-perguntas" placeholder="Pesquisar pergunta...">
-
-                <div class="categoria-perguntas">
-                    <h3>Sobre o site</h3>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            Qual é o objetivo do Indieano? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>O Indieano tem como objetivo apresentar jogos independentes, seus lançamentos e diferentes categorias.</p>
-                        </div>
-                    </div>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            O que são jogos indie? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>São jogos desenvolvidos por estúdios independentes ou pequenas equipes de desenvolvimento.</p>
-                        </div>
-                    </div>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            O site é gratuito? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>Sim! Você pode navegar pelo site e conhecer as categorias gratuitamente.</p>
-                        </div>
-                    </div>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            Como posso me inscrever? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>Clique no botão Inscrever-se no cabeçalho e preencha o formulário.</p>
-                        </div>
-                    </div>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            Posso enviar sugestões? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>Sim! Você pode utilizar o campo Algo mais do formulário para enviar sugestões.</p>
-                        </div>
-                    </div>
+            <section id="categorias" class="hyan_secao">
+                <h2>Explore por categoria</h2>
+                <div class="guilherme_grid_categorias">
+                    <article class="guilherme_cat">
+                        <h3>Metroidvania</h3>
+                        <p>Mapas interconectados e habilidades que abrem novos caminhos. Exemplo: Hollow Knight.</p>
+                    </article>
+                    <article class="guilherme_cat guilherme_cat_principal">
+                        <h3>Roguelike e Roguelite</h3>
+                        <img src="img/roguelike.jpg" alt="Imagem ilustrativa de jogo roguelike" loading="lazy"
+                             onerror="this.onerror=null; this.src='img/cuphead.jpg'">
+                        <p>
+                            Partidas com mapas, itens e encontros que variam a cada tentativa.
+                            A progressão e as regras de reinício mudam de jogo para jogo.
+                        </p>
+                        <ul>
+                            <li>Partidas com desafios variados</li>
+                            <li>Experimentação de estratégias</li>
+                            <li>Rejogabilidade e descoberta</li>
+                        </ul>
+                    </article>
+                    <article class="guilherme_cat">
+                        <h3>Puzzle e Estratégia</h3>
+                        <p>Lógica, observação e planejamento no centro da experiência. Exemplos: INSIDE e Into the Breach.</p>
+                    </article>
                 </div>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
+            </section>
 
-                <div class="categoria-perguntas">
-                    <h3>Jogos e categorias</h3>
+            <section id="catalogo" class="hyan_secao">
+                <h2>Catálogo completo</h2>
+                <p>Dez jogos com gênero, plataforma, modo, estilo visual e preço.</p>
+                <div class="guilherme_tabela_scroll">
+                    <table>
+                        <caption>Preços ilustrativos, apenas para demonstrar a estrutura da tabela</caption>
+                        <thead>
+                            <tr>
+                                <th>Jogo</th>
+                                <th>Gênero</th>
+                                <th>Plataforma</th>
+                                <th>Modo</th>
+                                <th>Estilo</th>
+                                <th>Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>Terraria</th><td>Sandbox</td><td>PC / Console</td><td>Solo / Online</td><td>2D</td><td>R$ 19,99</td></tr>
+                            <tr><th>Stardew Valley</th><td>Simulação</td><td>PC / Console</td><td>Solo / Coop.</td><td>Pixel art</td><td>R$ 24,99</td></tr>
+                            <tr><th>Hollow Knight</th><td>Metroidvania</td><td>PC / Console</td><td>Solo</td><td>2D</td><td>R$ 46,99</td></tr>
+                            <tr><th>Cuphead</th><td>Ação</td><td>PC / Console</td><td>Solo / Coop.</td><td>Animação</td><td>R$ 36,99</td></tr>
+                            <tr><th>Celeste</th><td>Plataforma</td><td>PC / Console</td><td>Solo</td><td>Pixel art</td><td>R$ 29,99</td></tr>
+                            <tr><th>Dead Cells</th><td>Roguelite</td><td>PC / Console</td><td>Solo</td><td>2D</td><td>R$ 49,99</td></tr>
+                            <tr><th>Undertale</th><td>RPG</td><td>PC / Console</td><td>Solo</td><td>Pixel art</td><td>R$ 19,99</td></tr>
+                            <tr><th>Hades</th><td>Roguelike</td><td>PC / Console</td><td>Solo</td><td>Isométrico</td><td>R$ 46,99</td></tr>
+                            <tr><th>INSIDE</th><td>Puzzle</td><td>PC / Console</td><td>Solo</td><td>2.5D</td><td>R$ 24,99</td></tr>
+                            <tr><th>Into the Breach</th><td>Estratégia</td><td>PC / Console</td><td>Solo</td><td>Pixel art</td><td>R$ 24,99</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
+            </section>
 
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            Onde encontro os lançamentos? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>Na seção Lançamentos, disponível no menu de navegação.</p>
+            <section id="galeria" class="hyan_secao">
+                <h2>Galeria indie</h2>
+                <p>Uma seleção visual dos jogos presentes na loja.</p>
+                <div class="hyan_galeria">
+                    <figure><img src="img/terraria.jpg" alt="Terraria" loading="lazy"><figcaption>Terraria</figcaption></figure>
+                    <figure><img src="img/stardewvalley.jpg" alt="Stardew Valley" loading="lazy"><figcaption>Stardew Valley</figcaption></figure>
+                    <figure><img src="img/hollowknight.jpg" alt="Hollow Knight" loading="lazy"><figcaption>Hollow Knight</figcaption></figure>
+                    <figure><img src="img/cuphead.jpg" alt="Cuphead" loading="lazy"><figcaption>Cuphead</figcaption></figure>
+                    <figure><img src="img/roguelike.jpg" alt="Jogo roguelike" loading="lazy"><figcaption>Roguelike</figcaption></figure>
+                    <figure><img src="img/treeshateyou.jpg" alt="Imagem de jogo em destaque" loading="lazy"><figcaption>Em destaque</figcaption></figure>
+                </div>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <section id="como-comprar" class="hyan_secao">
+                <h2>Como comprar</h2>
+                <ol class="guilherme_passos">
+                    <li><h3>Escolha</h3><p>Veja os jogos da loja e adicione os que quiser ao carrinho.</p></li>
+                    <li><h3>Confira</h3><p>Abra o carrinho no topo da página, ajuste as quantidades e confira o total.</p></li>
+                    <li><h3>Preencha</h3><p>Informe seus dados, a forma de pagamento e, se tiver, o cupom.</p></li>
+                    <li><h3>Receba</h3><p>A chave digital chega ao seu e-mail após a confirmação.</p></li>
+                </ol>
+                <blockquote>
+                    Dica: use o cupom INDIE10 na finalização para ganhar 10% de desconto.
+                </blockquote>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <section id="perguntas" class="hyan_secao">
+                <h2>Perguntas frequentes</h2>
+                <label for="busca-perguntas">Pesquisar nas perguntas</label>
+                <input type="search" id="busca-perguntas" class="guilherme_busca"
+                       placeholder="Digite uma palavra ou pergunta...">
+
+                <div class="guilherme_faq_grade">
+                    <div class="guilherme_faq_categoria">
+                        <h3>Compra e entrega</h3>
+                        <div class="guilherme_faq_item">
+                            <button type="button" class="guilherme_faq_botao">
+                                Como recebo meu jogo? <span>+</span>
+                            </button>
+                            <div class="guilherme_faq_resposta"><p>Por chave digital enviada ao e-mail informado na finalização do pedido.</p></div>
+                        </div>
+                        <div class="guilherme_faq_item">
+                            <button type="button" class="guilherme_faq_botao">
+                                Quais formas de pagamento existem? <span>+</span>
+                            </button>
+                            <div class="guilherme_faq_resposta"><p>Pix, cartão de crédito e boleto bancário.</p></div>
+                        </div>
+                        <div class="guilherme_faq_item">
+                            <button type="button" class="guilherme_faq_botao">
+                                Como uso o cupom de desconto? <span>+</span>
+                            </button>
+                            <div class="guilherme_faq_resposta"><p>Digite INDIE10 no campo de cupom do formulário de finalização.</p></div>
                         </div>
                     </div>
 
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            O que é Metroidvania? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>É um gênero de jogos focado na exploração de mapas interconectados e na descoberta de novas habilidades.</p>
+                    <div class="guilherme_faq_categoria">
+                        <h3>Sobre a loja</h3>
+                        <div class="guilherme_faq_item">
+                            <button type="button" class="guilherme_faq_botao">
+                                O que são jogos indie? <span>+</span>
+                            </button>
+                            <div class="guilherme_faq_resposta"><p>São jogos feitos por criadores ou estúdios independentes, em geral com equipes menores.</p></div>
                         </div>
-                    </div>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            O que é Roguelike? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>É um gênero conhecido por partidas com desafios variados e elementos de aleatoriedade.</p>
+                        <div class="guilherme_faq_item">
+                            <button type="button" class="guilherme_faq_botao">
+                                A loja é real? <span>+</span>
+                            </button>
+                            <div class="guilherme_faq_resposta"><p>Não. É um projeto acadêmico demonstrativo: nenhum dado é enviado e nenhum pagamento é processado.</p></div>
                         </div>
-                    </div>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            O que são jogos Puzzle? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>São jogos que envolvem raciocínio, lógica e resolução de desafios.</p>
-                        </div>
-                    </div>
-
-                    <div class="item-pergunta">
-                        <button class="botao-pergunta">
-                            Quais gêneros estão disponíveis? <span>+</span>
-                        </button>
-                        <div class="resposta-pergunta">
-                            <p>Plataforma, Metroidvania, Roguelike, Puzzle, RPGs, Estratégia e Relaxantes.</p>
+                        <div class="guilherme_faq_item">
+                            <button type="button" class="guilherme_faq_botao">
+                                O que é Metroidvania? <span>+</span>
+                            </button>
+                            <div class="guilherme_faq_resposta"><p>É um gênero focado em mapas interconectados e desbloqueio progressivo de habilidades.</p></div>
                         </div>
                     </div>
                 </div>
-
-                <p id="mensagem-perguntas">Nenhuma pergunta encontrada.</p>
-
-                <a href="#hyan_topo">Voltar ao topo</a>
+                <p id="hyan-mensagem-perguntas" hidden>Nenhuma pergunta encontrada.</p>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
             </section>
 
-
-            <aside id="guilherme-tabela">
-                <h2>Tabela 10x6</h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Coluna 1</th>
-                            <th>Coluna 2</th>
-                            <th>Coluna 3</th>
-                            <th>Coluna 4</th>
-                            <th>Coluna 5</th>
-                            <th>Coluna 6</th>
-                            <th>Coluna 7</th>
-                            <th>Coluna 8</th>
-                            <th>Coluna 9</th>
-                            <th>Coluna 10</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
-                            <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-                        </tr>
-                        <tr>
-                            <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
-                            <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
-                        </tr>
-                        <tr>
-                            <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
-                            <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-                        </tr>
-                        <tr>
-                            <td>31</td><td>32</td><td>33</td><td>34</td><td>35</td>
-                            <td>36</td><td>37</td><td>38</td><td>39</td><td>40</td>
-                        </tr>
-                        <tr>
-                            <td>41</td><td>42</td><td>43</td><td>44</td><td>45</td>
-                            <td>46</td><td>47</td><td>48</td><td>49</td><td>50</td>
-                        </tr>
-                        <tr>
-                            <td>51</td><td>52</td><td>53</td><td>54</td><td>55</td>
-                            <td>56</td><td>57</td><td>58</td><td>59</td><td>60</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </aside>
-
+            <section id="sobre" class="hyan_secao">
+                <h2>Sobre a Indieano Store</h2>
+                <div class="guilherme_sobre">
+                    <div>
+                        <p>
+                            A Indieano Store nasceu como projeto de Desenvolvimento Front-End de
+                            Hyan Castro Nascimento e Guilherme Chagas. A ideia é aproximar o público
+                            de jogos feitos por estúdios pequenos, com uma vitrine simples e honesta.
+                        </p>
+                        <h3>Nossos compromissos</h3>
+                        <ul>
+                            <li>Descrições claras, sem exagero.</li>
+                            <li>Preços visíveis antes de abrir o carrinho.</li>
+                            <li>Dados do pedido validados apenas na página, sem envio a servidor.</li>
+                        </ul>
+                    </div>
+                    <aside class="guilherme_resumo">
+                        <h3>Feito com</h3>
+                        <ul>
+                            <li>HTML5 semântico</li>
+                            <li>CSS Grid e media queries</li>
+                            <li>JavaScript puro e DOM</li>
+                        </ul>
+                    </aside>
+                </div>
+                <p class="hyan_voltar"><a href="#hyan_topo">↑ Voltar ao topo</a></p>
+            </section>
         </main>
 
-        <div id="guilherme-formulario-inscricao" style="display: none;">
-            <h2>Formulário de Inscrição</h2>
+        <dialog id="hyan-modal" class="hyan_modal">
+            <div class="hyan_modal_topo">
+                <h2 id="hyan-modal-titulo">Seu carrinho</h2>
+                <button type="button" id="hyan-fechar-modal" class="hyan_modal_fechar" aria-label="Fechar carrinho">×</button>
+            </div>
 
-            <form>
-                <fieldset>
-                    <legend>Dados Pessoais</legend>
+            <div class="hyan_modal_corpo">
+                <div id="hyan-etapa-carrinho">
+                    <div class="guilherme_carrinho_layout">
+                        <div>
+                            <p id="hyan-carrinho-vazio">Seu carrinho está vazio. Escolha um jogo na <a href="#loja" data-fechar-modal>loja</a>.</p>
+                            <ul id="hyan-lista-carrinho" class="hyan_lista_carrinho"></ul>
+                        </div>
+                        <aside class="guilherme_resumo">
+                            <h3>Resumo</h3>
+                            <p>Itens: <strong id="hyan-total-itens">0</strong></p>
+                            <p>Total: <strong id="hyan-total-valor">R$ 0,00</strong></p>
+                            <button type="button" id="hyan-ir-pedido" class="hyan_botao hyan_botao_destaque">Continuar para o pagamento</button>
+                            <button type="button" id="hyan-limpar" class="hyan_botao hyan_botao_secundario">Esvaziar carrinho</button>
+                        </aside>
+                    </div>
+                </div>
 
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+                <div id="hyan-etapa-pedido" hidden>
+                    <p class="guilherme_resumo_linha">
+                        <span>Total atual: <strong id="guilherme-resumo-total">R$ 0,00</strong></span>
+                        <button type="button" id="hyan-voltar-carrinho" class="hyan_botao hyan_botao_secundario">Voltar ao carrinho</button>
+                    </p>
+                    <form id="guilherme-form-pedido" class="guilherme_form" novalidate>
+                        <fieldset>
+                            <legend>Dados do comprador</legend>
+                            <div class="guilherme_form_grid">
+                                <div class="guilherme_campo">
+                                    <label for="nome">Nome completo *</label>
+                                    <input type="text" id="nome" name="nome" autocomplete="name" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="email">E-mail *</label>
+                                    <input type="email" id="email" name="email" autocomplete="email" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="cpf">CPF (somente números) *</label>
+                                    <input type="text" id="cpf" name="cpf" inputmode="numeric" maxlength="14" placeholder="00000000000" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="telefone">Telefone com DDD *</label>
+                                    <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(41) 99999-9999" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="nascimento">Data de nascimento *</label>
+                                    <input type="date" id="nascimento" name="nascimento" autocomplete="bday" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="plataforma">Plataforma do jogo *</label>
+                                    <select id="plataforma" name="plataforma" required>
+                                        <option value="">Selecione</option>
+                                        <option value="pc">PC</option>
+                                        <option value="playstation">PlayStation</option>
+                                        <option value="xbox">Xbox</option>
+                                        <option value="nintendo">Nintendo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                        <fieldset>
+                            <legend>Endereço de cobrança</legend>
+                            <div class="guilherme_form_grid">
+                                <div class="guilherme_campo">
+                                    <label for="cep">CEP *</label>
+                                    <input type="text" id="cep" name="cep" inputmode="numeric" maxlength="9" autocomplete="postal-code" placeholder="00000-000" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="endereco">Rua *</label>
+                                    <input type="text" id="endereco" name="endereco" autocomplete="address-line1" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="numero">Número *</label>
+                                    <input type="number" id="numero" name="numero" min="1" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="cidade">Cidade *</label>
+                                    <input type="text" id="cidade" name="cidade" autocomplete="address-level2" required>
+                                </div>
+                                <div class="guilherme_campo">
+                                    <label for="estado">Estado *</label>
+                                    <select id="estado" name="estado" autocomplete="address-level1" required>
+                                        <option value="">Selecione</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
 
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
+                        <fieldset>
+                            <legend>Pagamento e observações</legend>
+                            <p>Forma de pagamento *</p>
+                            <div class="guilherme_opcoes">
+                                <label><input type="radio" name="pagamento" value="pix"> Pix</label>
+                                <label><input type="radio" name="pagamento" value="cartao"> Cartão de crédito</label>
+                                <label><input type="radio" name="pagamento" value="boleto"> Boleto</label>
+                            </div>
 
-                    <label for="confirmar-senha">Confirmar Senha:</label>
-                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                            <div class="guilherme_campo">
+                                <label for="cupom">Cupom de desconto (opcional)</label>
+                                <input type="text" id="cupom" name="cupom" maxlength="20" placeholder="INDIE10">
+                            </div>
 
-                    <label for="data-nascimento">Data de Nascimento:</label>
-                    <input type="date" id="data-nascimento" name="data-nascimento" required>
+                            <div class="guilherme_campo">
+                                <label for="observacoes">Observações (opcional, até 300 caracteres)</label>
+                                <textarea id="observacoes" name="observacoes" rows="3" maxlength="300"></textarea>
+                            </div>
 
-                    <label for="sexo">Sexo:</label>
-                    <select id="sexo" name="sexo" required>
-                        <option value="">Selecione</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
-                    </select>
+                            <label class="guilherme_check" for="novidades">
+                                <input type="checkbox" id="novidades" name="novidades">
+                                Quero receber novidades e promoções por e-mail.
+                            </label>
+                            <label class="guilherme_check" for="termos">
+                                <input type="checkbox" id="termos" name="termos" required>
+                                Confirmo que revisei meu pedido e aceito os termos demonstrativos. *
+                            </label>
+                        </fieldset>
 
-                    <label for="algo-mais">Algo mais:</label>
-                    <textarea id="algo-mais" name="algo-mais"></textarea>
-                </fieldset>
+                        <p class="guilherme_observacao">* Campos obrigatórios. Este formulário é demonstrativo e não envia dados para um servidor.</p>
+                        <div class="guilherme_acoes">
+                            <button type="submit" class="hyan_botao hyan_botao_destaque">Confirmar pedido</button>
+                            <button type="reset" class="hyan_botao hyan_botao_secundario">Limpar formulário</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </dialog>
 
-                <fieldset>
-                    <legend>Confirmações</legend>
-
-                    <label for="termos">
-                        <input type="checkbox" id="termos" name="termos" required>
-                        Aceito os termos e condições
-                    </label>
-
-                    <label for="inscricao">
-                        <input type="submit" id="inscricao" name="inscricao" value="Enviar">
-                    </label>
-                </fieldset>
-            </form>
-        </div>
-        <footer>
-            <p>Desenvolvido pelos grandiosos GOATs Guilherme e Hyano.</p>
+        <footer class="hyan_rodape">
+            <a href="#hyan_topo">Voltar ao início ↑</a>
+            <p>Desenvolvido por Hyan Castro Nascimento e Guilherme Chagas.</p>
+            <p>Indieano Store — Trabalho Prático Integrador de Desenvolvimento Front-End • 2026</p>
         </footer>
-
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
-
 </html>
